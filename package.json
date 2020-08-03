@@ -4,9 +4,11 @@
   "description": "A module to convert swagger 2.0 JSONs to Postman Collection Format v1",
   "main": "convert.js",
   "scripts": {
-    "test": "scripts/test.sh"
+    "test": "scripts/test.sh",
+    "start": "node app.js"
   },
   "dependencies": {
+    "js-yaml": "^3.14.0",
     "jsface": "^2.2.0",
     "uuid": "^3.2.1"
   },
