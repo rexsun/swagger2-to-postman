@@ -1,59 +1,14 @@
 # Swagger 2 to Postman converter
-Converter for swagger 2.0 JSON to Postman Collection v1
+Converter for swagger 2.0 JSON to Postman Collection, steps
 
-# Install dependencies
+### Install dependencies
 run `$ npm install` to install the dependencies
 
-# Run NPM test
-run `$ npm test` to see the converter in action
+### Copy downloaded swagger file
+make sure you copy the downloaded file to /tmp/oas.yaml
 
-# Want to convert your own files?
-convert.js provides a jsFace class - Swagger2Postman. 
-Check test/converter.spec.js for basic usage.
+### Execute the script
+run `$ npm start`
 
-**Initialise class:**
-
-```js
-var swaggerConverter = new Swagger2Postman();
-```
-
-**Optionally, set a logger:**
-
-```js
-swaggerConverter.setLogger(console.log);
-```
-
-**Convert your Swagger 2.0 JSON:**
-
-```js
-var convertResult = swaggerConverter.convert(swaggerJson);
-```
-
-**Check the result:**
-
-```js
-convertResult.status === "failed"
-```
-
-for unsuccessful conversions. Check convertResult.message
-
-```js
-convertResult.status === "passed"
-```
-
-for successful conversions. Check convertResult.collection for the Postman collection JSON
-
-
-**Optional Configuration Parameters:**
-The constructor can also take in a map of configuration options
-
-```js
-var options = {
-  includeQueryParams: false
-};
-
-var swaggerConverter = new Swagger2Postman(options);
-```
-
-**valid options are:**
-includeQueryParams - (default true) Include query string parameters in the request url.
+### Check output
+the postman collection file should be generated at /tmp/postman.json, you could import it by postman
